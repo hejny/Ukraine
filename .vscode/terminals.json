@@ -1,0 +1,17 @@
+{
+    "autokill": true,
+    "terminals": [
+        {
+            "name": "🧪 Lint",
+            "command": "npm run lint",
+            "onlySingle": true,
+            "focus": true
+        },
+        {
+            "name": "🧪 Test",
+            "command": "npm run test",
+            "onlySingle": true,
+            "focus": true
+        }
+    ]
+}

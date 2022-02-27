@@ -1,6 +1,6 @@
 # 🟦 Stop war on Ukraine 🟨
 
-As a libertarian and programmer, I would never think that I would someday work on a piece of software that would go against free access to any service from any corner of the world.
+**As a libertarian and programmer,** I would never think that I would someday work on a piece of software that would go against free access to any service from any corner of the world.
 
 But unfortunately, the situation has changed.
 
@@ -14,7 +14,7 @@ We can not just close our eyes and just provide all services and benefits to the
 
 ---
 
-I don't want to punish the Russian people as a whole. A lot of them do not support the politics of their state. But unfortunately, economic pressure is now one of the less bad solutions.
+I don't want to punish the Russian people as a whole. As a citizen of Prague, I have few Russian friends and this definitely won't change. I believe most Russians do not support the politics of their state and especially this cruel war. But unfortunately, economic pressure is now one of the less bad solutions. And every ruble paid on taxes for the current Russian government means more money for killing innocent people.
 
 ---
 
@@ -119,3 +119,54 @@ Ukraine.save({
     isBloodIncluded: true,
 });
 ```
+
+## ⁉️ Questions & FAQ
+
+
+Few most common things aggregated from your questions:
+
+---
+
+> How do you detect whether the user is or isn't from Russia.
+
+We are capturing `navigator.language` from the browser. [Full implementation is here](https://github.com/hejny/Ukraine/blob/main/src/getUserLanguage.ts).
+
+
+---
+
+> How do you block the page?
+
+I am putting a fixed full-screen div with a big z-index + restricting overflow and pointer-events for the rest of the page.
+
+
+---
+
+> This restriction can be easily avoided!
+
+Yes and no. For litter more skilled user on the desktop, it can be. For most of the users not.
+They can also switch their language but my goal is not to be bulletproof 100% blocking. But just to show this important message for Russian citizens.
+
+---
+
+> This will also restrict Russian-speaking people from Ukraine?
+
+Unfortunately, probably yes. Please do not place this for some essential services for Ukrainian people which can help them survive the war, like news, instructions, maps, ...
+There is no way how to perfectly detect who the user is and **there will be always false positives and false negatives**.
+
+But if you have some better solution for this issue, [please share with me](https://github.com/hejny/Ukraine/issues/13).
+
+---
+
+> It makes no sense to block western information from Russian people!
+
+**Definitely!** If you are maintaining news and telling truth about the war / putin, please do not block it for the Russian people.
+This tool should be used as part of economic and social sanctions to Russia but made from the bottom. So, if you have some professional tool, some war/politics unrelated topic, unrelated blog, e-shop, crypto tool... you can use it as your personal economic sanctions.
+
+Not to punish Russian people but to increase the efficiency of economic sanctions and help to get rid of the current Kremlin regime/
+
+---
+
+> Can I change this and that?
+
+**Definitely!** Please make a [pull request](https://github.com/hejny/Ukraine/pulls).
+

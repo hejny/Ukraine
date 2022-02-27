@@ -71,7 +71,7 @@ var Ukraine = /** @class */ (function () {
             ? ''
             : "<img class=\"" + this.scope + "blood\" src=\"" + BLOOD_IMAGE_URL + "\" alt=\"Blood\"/>") + "\n          <div class=\"" + this.scope + "flag\">\n            <div class=\"" + this.scope + "text\">\n              " + this.options.text + "\n            </div>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n          </style>\n\n        </div>\n      ";
     }
-    Ukraine.create = function (options) {
+    Ukraine.save = function (options) {
         options = options || {};
         if (options.element === undefined) {
             options.element = window.document.createElement('div');

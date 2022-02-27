@@ -3,7 +3,7 @@ import { getUserLanguage } from './getUserLanguage';
 import { IUkraineOptions } from './options';
 
 export class Ukraine {
-    public static create(options?: Partial<IUkraineOptions>) {
+    public static save(options?: Partial<IUkraineOptions>) {
         options = options || {};
 
         if (options.element === undefined) {

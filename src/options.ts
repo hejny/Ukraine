@@ -4,3 +4,5 @@ export interface IUkraineOptions {
     text: string;
     isBloodIncluded: boolean;
 }
+
+// TODO: !!! Write anotations

@@ -1,11 +1,11 @@
 {
     "name": "ukraine",
     "version": "0.8.1",
-    "description": "Ban russian users from your website; in context of Ukraine invasion",
+    "description": "Ban Russian users from your website; in context of Ukraine invasion",
     "sideEffects": false,
-    "module": "./dist/esm/ukraine.js",
-    "main": "./dist/umd/ukraine.js",
-    "typings": "./dist/esm/typings/ukraine.d.ts",
+    "module": "./dist/esm/main.js",
+    "main": "./dist/umd/main.js",
+    "typings": "./dist/esm/typings/main.d.ts",
     "scripts": {
         "test": "jest",
         "lint": "tslint -p tsconfig.json",

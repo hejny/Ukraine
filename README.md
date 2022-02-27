@@ -53,9 +53,13 @@ _Note: Normally you would include **async** and **defer** keywords in the script
 
 ### 📘 Import into the bundle
 
+First, you need to install [save-ukraine package from NPM](https://www.npmjs.com/package/save-ukraine):
+
 ```bash
 npm i save-ukraine
 ```
+
+And then use:
 
 ```typescript
 import Ukraine from 'save-ukraine';

@@ -39,10 +39,10 @@ There are several ways how to add this to your page:
 
 ### 📔 Via HTML script tag
 
-<!-- TODO: Auto update of version v0.11.0 -->
+<!-- TODO: Auto update of version v0.13.0 -->
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.12.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.13.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>

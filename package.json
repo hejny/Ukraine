@@ -1,7 +1,7 @@
 {
     "name": "ukraine",
     "version": "0.8.1",
-    "description": "Ban russian users from the website; in context of Ukraine invasion",
+    "description": "Ban russian users from your website; in context of Ukraine invasion",
     "sideEffects": false,
     "module": "./dist/esm/ukraine.js",
     "main": "./dist/umd/ukraine.js",

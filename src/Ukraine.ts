@@ -1,4 +1,5 @@
 import { BLOOD_IMAGE_URL, UKRAINE_FLAG_IMAGE_URL } from './assets';
+import { getUserLanguage } from './getUserLanguage';
 import { IUkraineOptions } from './options';
 
 export class Ukraine {
@@ -23,8 +24,9 @@ export class Ukraine {
 
     public constructor(public readonly options: IUkraineOptions) {
         // TODO: Split into multiple methods like checkRequirements and init
-        if (navigator.language !== 'ru' /* <- TODO: !!! Only start with */) {
-            // !!! return;
+
+        if (!this.options.languages.includes(getUserLanguage())) {
+            return;
         }
 
         // Note: To suppress main scrollbar if the page has longer content

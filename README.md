@@ -26,9 +26,13 @@
 </script>
 ```
 
+_Note:_ You can [also modify the options](https://github.com/hejny/Ukraine/blob/main/samples/browser.html#L10).
 _Note: Normally you would include **async** and **defer** keywords in the script element. But in this situation we do not want to defer this miniscript._
 
 ### Via HTML script tag
+
+<!--
+TODO:
 
 ### Import into the bundle
 
@@ -59,6 +63,8 @@ Feel free to
 
 ## How not to use?
 
+-->
+
 ### Security
 
 When you import anythiong on yout pafe
@@ -78,3 +84,13 @@ When you import anythiong on yout pafe
             `),
             );
         </script>
+
+## Customization
+
+```javascript
+Ukraine.create({
+    text: 'Stop the war with <b>Ukraine</b>',
+    isBloodIncluded: true,
+    languages: [/* Russia and Belarus */ 'ru', 'by'],
+});
+```

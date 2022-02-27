@@ -24,13 +24,40 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
 var UKRAINE_FLAG_IMAGE_URL = "data:image/svg+xml,%3Csvg class='flag' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23005BBB'/%3E%3Crect width='1200' height='400' y='400' fill='%23FFD500'/%3E%3C/svg%3E";
 var BLOOD_IMAGE_URL = "https://raw.githubusercontent.com/hejny/Ukraine/main/assets/with-drops-of-blood.png";
 
+function getUserLanguage() {
+    var full = navigator.language || navigator.userLanguage;
+    var _a = __read(full.split('-'), 2), language = _a[0]; _a[1];
+    return language;
+}
+
 var Ukraine = /** @class */ (function () {
     function Ukraine(options) {
+        // TODO: Split into multiple methods like checkRequirements and init
         this.options = options;
         this.scope = 'x' + Math.random().toString().split('.')[1] + '_';
+        if (!this.options.languages.includes(getUserLanguage())) {
+            return;
+        }
         // Note: To suppress main scrollbar if the page has longer content
         window.document.body.style.setProperty('overflow', 'hidden', 'important');
         this.options.element.style.zIndex = '999999';

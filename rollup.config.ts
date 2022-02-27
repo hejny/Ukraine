@@ -1,16 +1,16 @@
 import typescript from '@rollup/plugin-typescript';
 
 export default {
-    input: './src/spaceTrim.ts',
+    input: './src/main.ts',
     output: [
         {
-            file: './dist/umd/spaceTrim.js',
-            name: 'spaceTrim',
+            file: './dist/umd/main.js',
+            name: 'Ukraine',
             format: 'umd',
             sourcemap: true,
         },
         {
-            file: './dist/esm/spaceTrim.js',
+            file: './dist/esm/main.js',
             format: 'es',
             sourcemap: true,
         },

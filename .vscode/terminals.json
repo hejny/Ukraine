@@ -2,6 +2,11 @@
     "autokill": true,
     "terminals": [
         {
+            "name": "👨🏽‍💻 Develop",
+            "command": "npm run develop",
+            "focus": true
+        },
+        {
             "name": "🧪 Lint",
             "command": "npm run lint",
             "onlySingle": true,

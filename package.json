@@ -1,5 +1,5 @@
 {
-    "name": "ukraine",
+    "name": "save-ukraine",
     "version": "0.9.0",
     "description": "Ban Russian users from your website; in context of Ukraine invasion",
     "sideEffects": false,

@@ -39,52 +39,35 @@ There are several ways how to add this to your page:
 
 ### 📔 Via HTML script tag
 
-<!--!!! Add here latest immutable version-->
+<!-- TODO: Auto update of version v0.9.0 -->
 
 ```html
-<script src="https://raw.githubusercontent.com/hejny/Ukraine/main/dist/umd/main.js"></script>
+<script src="https://raw.githubusercontent.com/hejny/Ukraine/v0.9.0/dist/umd/main.js"></script>
 <script>
-    Ukraine.create();
+    Ukraine.save();
 </script>
 ```
 
 _Note:_ You can [also modify the options](https://github.com/hejny/Ukraine/blob/main/samples/browser.html#L10).
 _Note: Normally you would include **async** and **defer** keywords in the script element. But in this situation we do not want to defer this miniscript._
 
-<!--
-TODO:
-
 ### 📘 Import into the bundle
 
-
 ```bash
-npm i --save ukraine
+npm i save-ukraine
 ```
 
 ```typescript
-import { Ukraine } from 'ukraine';
+import { Ukraine } from 'save-ukraine';
 
-const trimmed = Ukraine(`
-
-Hello
-Space
-Trim
-
-
-`);
-
-console.log(trimmed);
-
-/*Hello
-Space
-Trim*/
+Ukraine.save();
 ```
 
 _Note: This library is written in TypeScript so [options](./src/options.ts) are fully typed._
 
+<!--
 ### 📗 Wordpress, ...
-
-Feel free to
+Feel free to add more methods of importing
 -->
 
 ## 🛑 How not to use?
@@ -123,7 +106,7 @@ You can customize what will be shown.
 Here are all the [options](./src/options.ts). If you have some idea feel free to contribute via pull request.
 
 ```javascript
-Ukraine.create({
+Ukraine.save({
     text: 'Stop the war with <b>Ukraine</b>',
     languages: [/* Russia and Belarus */ 'ru', 'by'],
     isBloodIncluded: true,

@@ -19,7 +19,7 @@ export class Ukraine {
 
         return new Ukraine({
             element: options.element,
-            languages: [/* Russia and Belarus */ 'ru', 'by'],
+            countries: [/* Russia and Belarus */ 'ru', 'by'],
             isBloodIncluded: true,
             text: `Остановить войну с <b>Украиной</b>`,
             ...options,
@@ -31,7 +31,7 @@ export class Ukraine {
     public constructor(public readonly options: IUkraineOptions) {
         // TODO: Split into multiple methods like checkRequirements and init
 
-        if (!this.options.languages.includes(getUserLanguage())) {
+        if (!this.options.countries.includes(getUserLanguage())) {
             return;
         }
 

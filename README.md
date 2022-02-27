@@ -111,7 +111,7 @@ Here are all the [options](./src/options.ts). If you have some idea feel free to
 ```javascript
 Ukraine.save({
     text: 'Stop the war with <b>Ukraine</b>',
-    languages: [/* Russia and Belarus */ 'ru', 'by'],
+    countries: [/* Russia and Belarus */ 'ru', 'by'],
     isBloodIncluded: true,
 });
 ```

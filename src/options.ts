@@ -8,7 +8,7 @@ export interface IUkraineOptions {
     /**
      * List of banned countries by ISO 3166
      */
-    languages: string[];
+     countries: string[];
 
     /**
      * What text to show

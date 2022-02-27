@@ -17,6 +17,17 @@
 
 ## How to include on your page?
 
+<!--!!! Add here latest immutable version-->
+
+```html
+<script src="https://raw.githubusercontent.com/hejny/Ukraine/main/dist/umd/main.js"></script>
+<script>
+    Ukraine.create({ text: 'a', isBloodIncluded: false });
+</script>
+```
+
+_Note: Normally you would include **async** and **defer** keywords in the script element. But in this situation we do not want to defer this miniscript._
+
 ### Via HTML script tag
 
 ### Import into the bundle
@@ -40,7 +51,7 @@ Space
 Trim*/
 ```
 
-_Note: This library is_
+_Note: This library is written in TypeScript so [options](./src/options.ts) are fully typed._
 
 ### Wordpress, ...
 

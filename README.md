@@ -14,6 +14,10 @@ We can not just close our eyes and just provide all services and benefits to the
 
 ---
 
+I don't want to punish the Russian people as a whole. A lot of them do not support the politics of their state. But unfortunately, economic pressure is now one of the less bad solutions.
+
+---
+
 I have created a simple way how to do it.
 
 For the users **from other places, nothing happens**. The script is tiny to load and insignificant. If the visitor is from **Russia or Belarus** _(detected by system language)_ this **message will appear**:

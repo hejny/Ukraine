@@ -42,7 +42,7 @@ There are several ways how to add this to your page:
 <!-- TODO: Auto update of version v0.11.0 -->
 
 ```html
-<script src="https://raw.githubusercontent.com/hejny/Ukraine/v0.11.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.12.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>

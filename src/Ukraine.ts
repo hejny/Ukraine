@@ -3,10 +3,16 @@ import { getUserLanguage } from './getUserLanguage';
 import { IUkraineOptions } from './options';
 
 export class Ukraine {
-    public static save(options?: Partial<IUkraineOptions>) {
+    public static async save(options?: Partial<IUkraineOptions>) {
         options = options || {};
 
         if (options.element === undefined) {
+            await new Promise<void>((resolve) => {
+                window.addEventListener('load', (event) => {
+                    resolve();
+                });
+            });
+
             options.element = window.document.createElement('div');
             window.document.body.appendChild(options.element);
         }

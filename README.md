@@ -13,28 +13,16 @@
 
 <!--/Badges-->
 
-Ukraine is trimming string from all 4 sides.<br/>
-It is very helpful to keep pretty code indentation without keeping a strange spaces inside a strings.
+[Blood on Ukraine](./assets/wallpaper.png)
 
-```
-░░░░░░░░░░░░░
-░░░░░░░░░░░░░░
-░░░░░░░╔═════╗░
-░░░░░░░║Hello║░░
-░░░░░░░║Space║░░░
-░░░░░░░║Trim ║░░░░
-░░░░░░░╚═════╝░░░░░
-░░░░░░░░░░░░░░░░░░░░
-```
+## How to include on your page?
 
-## Usage
+### Via HTML script tag
 
-```bash
-npm i Ukraine
-```
+### Import into the bundle
 
 ```typescript
-import { Ukraine } from 'Ukraine';
+import { Ukraine } from 'ukraine';
 
 const trimmed = Ukraine(`
 
@@ -52,42 +40,19 @@ Space
 Trim*/
 ```
 
-_See more examples in [simple tests](./src/Ukraine.test.ts)._
+_Note: This library is_
 
-## Nesting
+### Wordpress, ...
 
-This is very usefull when you want to trim multiline strings inside multiline strings.
+Feel free to
 
-```typescript
-import { Ukraine } from 'Ukraine';
+## How not to use?
 
-const trimmed = Ukraine(
-    (block) => `
+### Security
 
-Numbers
-${block(['1', '2', '3'].join('\n'))}
-Chars
-${block(['A', 'B', 'C'].join('\n'))}
+When you import anythiong on yout pafe
 
-`,
-);
-
-console.log(trimmed);
-
-/*Numbers
-1
-2
-3
-Chars
-A
-B
-C*/
-```
-
-_See more examples in [nesting tests](./src/nesting.test.ts)._
-
-
-
+### Import via
 
 !!! Do not use - can i use Russia
 

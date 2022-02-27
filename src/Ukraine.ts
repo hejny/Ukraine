@@ -1,9 +1,5 @@
 import { BLOOD_IMAGE_URL, UKRAINE_FLAG_IMAGE_URL } from './assets';
-
-export interface IUkraineOptions {
-    element: HTMLElement;
-    languages: string[];
-}
+import { IUkraineOptions } from './options';
 
 export class Ukraine {
     public static create(options?: Partial<IUkraineOptions>) {
@@ -16,7 +12,9 @@ export class Ukraine {
 
         return new Ukraine({
             element: options.element,
-            languages: [/* Russia and belarussia */ 'ru', 'by'],
+            languages: [/* Russia and Belarus */ 'ru', 'by'],
+            isBloodIncluded: true,
+            text: `Остановить войну с <b>Украиной</b>`,
             ...options,
         });
     }
@@ -45,29 +43,21 @@ export class Ukraine {
         this.options.element.style.backgroundColor = '#ffffff';
         this.options.element.innerHTML = /* TODO: Use spaceTrim */ `
         <div>
-
-
-          <img class="${this.scope}blood" src="${BLOOD_IMAGE_URL}" alt="Blood"/>
-
+          ${
+              !this.options.isBloodIncluded
+                  ? ''
+                  : `<img class="${this.scope}blood" src="${BLOOD_IMAGE_URL}" alt="Blood"/>`
+          }
           <div class="${this.scope}flag">
-
-
             <div class="${this.scope}text">
-              Остановить войну с
-              <b>Украиной</b>
+              ${this.options.text}
             </div>
-
-
           </div>
-
-
-
 
           <style>
             img.${this.scope}blood{
               position: fixed;
               pointer-events: none;
-
               left: 10vw;
               top: 10vh;
               max-width: 30vw;
@@ -75,14 +65,10 @@ export class Ukraine {
 
 
             .${this.scope}flag {
-
               background-image: url("${UKRAINE_FLAG_IMAGE_URL}");
               background-size: cover;
-
               width:100vw;
               height:100vh;
-
-
               display: flex;
               justify-content: center;
               align-items: center;
@@ -93,8 +79,6 @@ export class Ukraine {
               font-size: 50px;
               color: #FFD500;
               background-color: #005BBB;
-
-
               border: 3px double #FFD500;
             }
 

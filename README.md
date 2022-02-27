@@ -162,7 +162,7 @@ But if you have some better solution for this issue, [please share with me](http
 **Definitely!** If you are maintaining news and telling truth about the war / putin, please do not block it for the Russian people.
 This tool should be used as part of economic and social sanctions to Russia but made from the bottom. So, if you have some professional tool, some war/politics unrelated topic, unrelated blog, e-shop, crypto tool... you can use it as your personal economic sanctions.
 
-Not to punish Russian people but to increase the efficiency of economic sanctions and help to get rid of the current Kremlin regime/
+Not to punish Russian people but to increase the efficiency of economic sanctions and help to get rid of the current Kremlin regime.
 
 ---
 

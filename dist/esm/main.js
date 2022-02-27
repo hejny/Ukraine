@@ -13,52 +13,40 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
-var __assign = function () {
-    __assign =
-        Object.assign ||
-        function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s)
-                    if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-        };
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
     return __assign.apply(this, arguments);
 };
 
 function __read(o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
-    var i = m.call(o),
-        r,
-        ar = [],
-        e;
+    var i = m.call(o), r, ar = [], e;
     try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
-            ar.push(r.value);
-    } catch (error) {
-        e = { error: error };
-    } finally {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
         try {
-            if (r && !r.done && (m = i['return'])) m.call(i);
-        } finally {
-            if (e) throw e.error;
+            if (r && !r.done && (m = i["return"])) m.call(i);
         }
+        finally { if (e) throw e.error; }
     }
     return ar;
 }
 
-var UKRAINE_FLAG_IMAGE_URL =
-    "data:image/svg+xml,%3Csvg class='flag' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23005BBB'/%3E%3Crect width='1200' height='400' y='400' fill='%23FFD500'/%3E%3C/svg%3E";
-var BLOOD_IMAGE_URL =
-    'https://raw.githubusercontent.com/hejny/Ukraine/main/assets/with-drops-of-blood.png';
+var UKRAINE_FLAG_IMAGE_URL = "data:image/svg+xml,%3Csvg class='flag' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%23005BBB'/%3E%3Crect width='1200' height='400' y='400' fill='%23FFD500'/%3E%3C/svg%3E";
+var BLOOD_IMAGE_URL = "https://raw.githubusercontent.com/hejny/Ukraine/main/assets/with-drops-of-blood.png";
 
 function getUserLanguage() {
     var full = navigator.language || navigator.userLanguage;
-    var _a = __read(full.split('-'), 2),
-        language = _a[0];
-    _a[1];
+    var _a = __read(full.split('-'), 2), language = _a[0]; _a[1];
     return language;
 }
 
@@ -71,11 +59,7 @@ var Ukraine = /** @class */ (function () {
             return;
         }
         // Note: To suppress main scrollbar if the page has longer content
-        window.document.body.style.setProperty(
-            'overflow',
-            'hidden',
-            'important',
-        );
+        window.document.body.style.setProperty('overflow', 'hidden', 'important');
         this.options.element.style.zIndex = '999999';
         this.options.element.style.position = 'fixed';
         this.options.element.style.top = '0';
@@ -83,55 +67,20 @@ var Ukraine = /** @class */ (function () {
         this.options.element.style.left = '0';
         this.options.element.style.right = '0';
         this.options.element.style.backgroundColor = '#ffffff';
-        this.options.element.innerHTML =
-            /* TODO: Use spaceTrim */ '\n        <div>\n          ' +
-            (!this.options.isBloodIncluded
-                ? ''
-                : '<img class="' +
-                  this.scope +
-                  'blood" src="' +
-                  BLOOD_IMAGE_URL +
-                  '" alt="Blood"/>') +
-            '\n          <div class="' +
-            this.scope +
-            'flag">\n            <div class="' +
-            this.scope +
-            'text">\n              ' +
-            this.options.text +
-            '\n            </div>\n          </div>\n\n          <style>\n            img.' +
-            this.scope +
-            'blood{\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n\n            .' +
-            this.scope +
-            'flag {\n              background-image: url("' +
-            UKRAINE_FLAG_IMAGE_URL +
-            '");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            .' +
-            this.scope +
-            'text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            .' +
-            this.scope +
-            'text b{\n              display: block;\n              font-size: 100px;\n            }\n          </style>\n\n        </div>\n      ';
-        // TODO: !!! Also ocupy console and mess up whole dom
-        // TODO: Play anthemn
+        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n        <div>\n          " + (!this.options.isBloodIncluded
+            ? ''
+            : "<img class=\"" + this.scope + "blood\" src=\"" + BLOOD_IMAGE_URL + "\" alt=\"Blood\"/>") + "\n          <div class=\"" + this.scope + "flag\">\n            <div class=\"" + this.scope + "text\">\n              " + this.options.text + "\n            </div>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n          </style>\n\n        </div>\n      ";
     }
-    Ukraine.save = function (options) {
+    Ukraine.create = function (options) {
         options = options || {};
         if (options.element === undefined) {
             options.element = window.document.createElement('div');
             window.document.body.appendChild(options.element);
         }
-        return new Ukraine(
-            __assign(
-                {
-                    element: options.element,
-                    languages: [/* Russia and Belarus */ 'ru', 'by'],
-                    isBloodIncluded: true,
-                    text: '\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0432\u043E\u0439\u043D\u0443 \u0441 <b>\u0423\u043A\u0440\u0430\u0438\u043D\u043E\u0439</b>',
-                },
-                options,
-            ),
-        );
+        return new Ukraine(__assign({ element: options.element, languages: [/* Russia and Belarus */ 'ru', 'by'], isBloodIncluded: true, text: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0432\u043E\u0439\u043D\u0443 \u0441 <b>\u0423\u043A\u0440\u0430\u0438\u043D\u043E\u0439</b>" }, options));
     };
     return Ukraine;
-})();
+}());
 
 export { Ukraine as default };
 //# sourceMappingURL=main.js.map

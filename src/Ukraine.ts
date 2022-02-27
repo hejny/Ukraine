@@ -92,8 +92,5 @@ export class Ukraine {
 
         </div>
       `;
-
-        // TODO: !!! Also ocupy console and mess up whole dom
-        // TODO: Play anthemn
     }
 }

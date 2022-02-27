@@ -1,6 +1,6 @@
 {
     "name": "save-ukraine",
-    "version": "0.12.0",
+    "version": "0.13.0",
     "description": "Ban Russian users from your website; in context of Ukraine invasion",
     "sideEffects": false,
     "module": "./dist/esm/main.js",

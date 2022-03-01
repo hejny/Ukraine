@@ -99,6 +99,13 @@ export class Ukraine {
           }
 
           <div class="${this.scope}flag">
+
+            ${
+                !this.options.isGraphicIncluded
+                    ? ''
+                    : `<div class="${this.scope}graphic"><div class="inner"></div></div>`
+            }
+
             <a class="${this.scope}text" href="${this.options.moreInfoUrl}">
               ${this.options.text}
             </a>
@@ -140,6 +147,21 @@ export class Ukraine {
               display: flex;
               justify-content: center;
               align-items: center;
+            }
+
+            .${this.scope}graphic {
+              position: absolute;
+              opacity: 0.5;
+              pointer-events: none;
+            }
+            .${this.scope}graphic .inner {
+              position: relative;
+              background-image: url("https://raw.githubusercontent.com/hejny/Ukraine/main/assets/war/war1.jpg");
+              background-size: cover;
+              opacity: 0.5;
+              pointer-events: none;
+              width:100vw;
+              height:100vh;
             }
 
             .${this.scope}text {

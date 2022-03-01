@@ -173,7 +173,7 @@ var Ukraine = /** @class */ (function () {
                 rotate: '-45deg',
             },
         }[this.options.ribbon], container = _a.container, rotate = _a.rotate;
-        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(" + rotate + ");\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
+        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(" + rotate + ");\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
     };
     return Ukraine;
 }());

@@ -122,6 +122,17 @@ Ukraine.save({
 });
 ```
 
+## 🎭 Scenarios
+
+!!!
+### I just want to add
+
+### I want to block
+
+### I want to block
+
+
+
 ## ⁉️ Questions & FAQ
 
 

@@ -126,7 +126,7 @@ export class Ukraine {
         this.options.element.innerHTML = /* TODO: Use spaceTrim */ `
 
         <div class="${this.scope}container">
-          <a class="${this.scope}ribbon" href="${this.options.moreInfoUrl}"></a>
+          <a class="${this.scope}ribbon" href="${this.options.moreInfoUrl}" target="_blank" rel="noopener noreferrer"></a>
         </div>
 
         <style>

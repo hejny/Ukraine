@@ -37,6 +37,12 @@ export class Ukraine {
     }
 
     private initBlocking() {
+        if (this.options.isCancelable) {
+            if (localStorage.getItem('Ukraine-read')) {
+                return;
+            }
+        }
+
         // Note: To suppress main scrollbar if the page has longer content
         window.document.body.style.setProperty(
             'overflow',
@@ -58,19 +64,44 @@ export class Ukraine {
                   ? ''
                   : `<img class="${this.scope}blood" src="${BLOOD_IMAGE_URL}" alt="Blood"/>`
           }
+
+          ${
+              !this.options.isCancelable
+                  ? ''
+                  : `<button class="${this.scope}cancel">✖</button>`
+          }
+
           <div class="${this.scope}flag">
-            <div class="${this.scope}text">
+            <a class="${this.scope}text" href="${this.options.moreInfoUrl}">
               ${this.options.text}
-            </div>
+            </a>
           </div>
 
           <style>
             img.${this.scope}blood{
+              z-index: 9999999;
               position: fixed;
               pointer-events: none;
               left: 10vw;
               top: 10vh;
               max-width: 30vw;
+            }
+
+            button.${this.scope}cancel{
+              display: block;
+              position: fixed;
+              top: 0;
+              right: 0;
+              cursor: pointer;
+              font-size: 35px;
+              color: #FFD500;
+              background-color: #005BBB;
+              border: none;
+              outline: none;
+            }
+
+            button.${this.scope}cancel:hover{
+              color: #ffffff;
             }
 
 
@@ -96,11 +127,22 @@ export class Ukraine {
               display: block;
               font-size: 100px;
             }
+
+
           </style>
 
         </div>
       `;
-        // !!! Use here this.options.moreInfoUrl
+
+        if (this.options.isCancelable) {
+            this.options.element
+                .querySelector(`.${this.scope}cancel`)!
+                .addEventListener('click', () => {
+                    this.options.element.remove();
+                    localStorage.setItem('Ukraine-read', 'true');
+                    location.reload();
+                });
+        }
     }
 
     private initRibbon() {

@@ -146,6 +146,12 @@
             });
         };
         Ukraine.prototype.initBlocking = function () {
+            var _this = this;
+            if (this.options.isCancelable) {
+                if (localStorage.getItem('Ukraine-read')) {
+                    return;
+                }
+            }
             // Note: To suppress main scrollbar if the page has longer content
             window.document.body.style.setProperty('overflow', 'hidden', 'important');
             this.options.element.style.zIndex = '999999';
@@ -157,8 +163,18 @@
             this.options.element.style.backgroundColor = '#ffffff';
             this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n        <div>\n          " + (!this.options.isBloodIncluded
                 ? ''
-                : "<img class=\"" + this.scope + "blood\" src=\"" + BLOOD_IMAGE_URL + "\" alt=\"Blood\"/>") + "\n          <div class=\"" + this.scope + "flag\">\n            <div class=\"" + this.scope + "text\">\n              " + this.options.text + "\n            </div>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n          </style>\n\n        </div>\n      ";
-            // !!! Use here this.options.moreInfoUrl
+                : "<img class=\"" + this.scope + "blood\" src=\"" + BLOOD_IMAGE_URL + "\" alt=\"Blood\"/>") + "\n\n          " + (!this.options.isCancelable
+                ? ''
+                : "<button class=\"" + this.scope + "cancel\">\u2716</button>") + "\n\n          <div class=\"" + this.scope + "flag\">\n            <a class=\"" + this.scope + "text\" href=\"" + this.options.moreInfoUrl + "\">\n              " + this.options.text + "\n            </a>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              z-index: 9999999;\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n            button." + this.scope + "cancel{\n              display: block;\n              position: fixed;\n              top: 0;\n              right: 0;\n              cursor: pointer;\n              font-size: 35px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: none;\n              outline: none;\n            }\n\n            button." + this.scope + "cancel:hover{\n              color: #ffffff;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n\n\n          </style>\n\n        </div>\n      ";
+            if (this.options.isCancelable) {
+                this.options.element
+                    .querySelector("." + this.scope + "cancel")
+                    .addEventListener('click', function () {
+                    _this.options.element.remove();
+                    localStorage.setItem('Ukraine-read', 'true');
+                    location.reload();
+                });
+            }
         };
         Ukraine.prototype.initRibbon = function () {
             var _a = {

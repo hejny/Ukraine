@@ -50,7 +50,6 @@ export interface IUkraineOptions {
     /**
      * If true, there will be option to proceed to website
      * This will change HARD ban to SOFT ban
-     * TODO: !!! Implement
      * TODO: !!! To samples + README
      */
     isCancelable: boolean;

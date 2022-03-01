@@ -8,7 +8,7 @@ export interface IUkraineOptions {
     /**
      * List of banned countries by ISO 3166
      */
-     countries: string[];
+    countries: string[];
 
     /**
      * What text to show
@@ -17,7 +17,34 @@ export interface IUkraineOptions {
     text: string;
 
     /**
+     * Link to more information about this war
+     * TODO: Implement
+     * TODO: To samples + README
+     */
+    moreInfoUrl: string | URL;
+
+    /**
+     * If true, information will be shown also in dev console
+     */
+    isInConsole: boolean;
+
+    /**
      * If true, image of the blood will be shown.
      */
     isBloodIncluded: boolean;
+
+    /**
+     * If true, images from war will be shown.
+     * TODO: Implement
+     * TODO: To samples + README
+     */
+    isGraphicIncluded: boolean;
+
+    /**
+     * If true, there will be option to proceed to website
+     * This will change HARD ban to SOFT ban
+     * TODO: Implement
+     * TODO: To samples + README
+     */
+    isCancelable: boolean;
 }

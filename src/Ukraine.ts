@@ -1,6 +1,6 @@
 import { BLOOD_IMAGE_URL, UKRAINE_FLAG_IMAGE_URL } from './assets';
 import { getUserLanguage } from './getUserLanguage';
-import { IUkraineOptions } from './options';
+import { defaultOptions, IUkraineOptions } from './options';
 
 export class Ukraine {
     public static async save(options?: Partial<IUkraineOptions>) {
@@ -19,9 +19,7 @@ export class Ukraine {
 
         return new Ukraine({
             element: options.element,
-            countries: [/* Russia and Belarus */ 'ru', 'by'],
-            isBloodIncluded: true,
-            text: `Остановить войну с <b>Украиной</b>`,
+            ...defaultOptions,
             ...options,
         });
     }

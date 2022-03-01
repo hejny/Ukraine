@@ -14,7 +14,36 @@ export interface IUkraineOptions {
      */
     text: string;
     /**
+     * Link to more information about this war
+     * Note: Using type string (not URL class) to keep maximal compatibility
+     * TODO: Implement
+     * TODO: To samples + README
+     */
+    moreInfoUrl: string;
+    /**
+     * If set, ribbon with Ukraine flag leading to `moreInfoUrl` will be shown in corner of the page for all users
+     */
+    ribbon: null | 'TOP_LEFT' | 'TOP_RIGHT' | 'BOTTOM_LEFT' | 'BOTTOM_RIGHT';
+    /**
+     * If true, information will be shown also in dev console
+     */
+    isInConsole: boolean;
+    /**
      * If true, image of the blood will be shown.
      */
     isBloodIncluded: boolean;
+    /**
+     * If true, images from war will be shown.
+     * TODO: Implement
+     * TODO: To samples + README
+     */
+    isGraphicIncluded: boolean;
+    /**
+     * If true, there will be option to proceed to website
+     * This will change HARD ban to SOFT ban
+     * TODO: Implement
+     * TODO: To samples + README
+     */
+    isCancelable: boolean;
 }
+export declare const defaultOptions: Omit<IUkraineOptions, 'element'>;

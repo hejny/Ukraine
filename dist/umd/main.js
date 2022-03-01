@@ -94,6 +94,23 @@
         return language;
     }
 
+    var defaultOptions = {
+        /**
+         * TODO: Add more countries like chechnya
+         */
+        countries: [/* Russia and Belarus */ 'ru', 'by'],
+        text: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0432\u043E\u0439\u043D\u0443 \u0441 <b>\u0423\u043A\u0440\u0430\u0438\u043D\u043E\u0439</b>",
+        /**
+         * TODO: Better URL
+         */
+        moreInfoUrl: "https://github.com/hejny/Ukraine",
+        ribbon: 'BOTTOM_RIGHT',
+        isInConsole: true,
+        isBloodIncluded: true,
+        isGraphicIncluded: true,
+        isCancelable: true,
+    };
+
     var Ukraine = /** @class */ (function () {
         function Ukraine(options) {
             // TODO: Split into multiple methods like checkRequirements and init
@@ -132,7 +149,7 @@
                             options.element = window.document.createElement('div');
                             window.document.body.appendChild(options.element);
                             _a.label = 2;
-                        case 2: return [2 /*return*/, new Ukraine(__assign({ element: options.element, countries: [/* Russia and Belarus */ 'ru', 'by'], isBloodIncluded: true, text: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0432\u043E\u0439\u043D\u0443 \u0441 <b>\u0423\u043A\u0440\u0430\u0438\u043D\u043E\u0439</b>" }, options))];
+                        case 2: return [2 /*return*/, new Ukraine(__assign(__assign({ element: options.element }, defaultOptions), options))];
                     }
                 });
             });

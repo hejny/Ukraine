@@ -18,10 +18,16 @@ export interface IUkraineOptions {
 
     /**
      * Link to more information about this war
+     * Note: Using type string (not URL class) to keep maximal compatibility
      * TODO: Implement
      * TODO: To samples + README
      */
-    moreInfoUrl: string | URL;
+    moreInfoUrl: string;
+
+    /**
+     * If set, ribbon with Ukraine flag leading to `moreInfoUrl` will be shown in corner of the page for all users
+     */
+    ribbon: null | 'TOP_LEFT' | 'TOP_RIGHT' | 'BOTTOM_LEFT' | 'BOTTOM_RIGHT';
 
     /**
      * If true, information will be shown also in dev console
@@ -48,3 +54,22 @@ export interface IUkraineOptions {
      */
     isCancelable: boolean;
 }
+
+export const defaultOptions: Omit<IUkraineOptions, 'element'> = {
+    /**
+     * TODO: Add more countries like chechnya
+     */
+    countries: [/* Russia and Belarus */ 'ru', 'by'],
+
+    text: `Остановить войну с <b>Украиной</b>`,
+
+    /**
+     * TODO: Better URL
+     */
+    moreInfoUrl: `https://github.com/hejny/Ukraine`,
+    ribbon: 'BOTTOM_RIGHT',
+    isInConsole: true,
+    isBloodIncluded: true,
+    isGraphicIncluded: true,
+    isCancelable: true,
+};

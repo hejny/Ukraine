@@ -68,6 +68,18 @@
         }
     }
 
+    function __values(o) {
+        var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+        if (m) return m.call(o);
+        if (o && typeof o.length === "number") return {
+            next: function () {
+                if (o && i >= o.length) o = void 0;
+                return { value: o && o[i++], done: !o };
+            }
+        };
+        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+    }
+
     function __read(o, n) {
         var m = typeof Symbol === "function" && o[Symbol.iterator];
         if (!m) return o;
@@ -118,6 +130,9 @@
             this.scope = 'x' + Math.random().toString().split('.')[1] + '_';
             if (this.options.countries.includes(getUserLanguage())) {
                 this.initBlocking();
+                if (this.options.isInConsole) {
+                    this.initConsole();
+                }
             }
             else if (options.ribbon) {
                 this.initRibbon();
@@ -144,6 +159,32 @@
                     }
                 });
             });
+        };
+        Ukraine.prototype.rerenderConsole = function () {
+            console.clear();
+            var message = document.querySelector("." + this.scope + "text").innerText;
+            console.info("%c " + message, "background: #005BBB; color: #FFD500; font-size: 50px;");
+            console.info(this.options.moreInfoUrl);
+        };
+        Ukraine.prototype.initConsole = function () {
+            var e_1, _a;
+            var _this = this;
+            this.rerenderConsole();
+            try {
+                for (var _b = __values([1, 10, 100, 1000, 10000, 50000]), _c = _b.next(); !_c.done; _c = _b.next()) {
+                    var timeout = _c.value;
+                    setTimeout(function () {
+                        _this.rerenderConsole();
+                    }, timeout);
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
         };
         Ukraine.prototype.initBlocking = function () {
             var _this = this;

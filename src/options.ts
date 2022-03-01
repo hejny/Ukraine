@@ -32,6 +32,8 @@ export interface IUkraineOptions {
 
     /**
      * If true, information will be shown also in dev console
+     * TODO: !!! Implement
+     * TODO: !!! To samples + README
      */
     isInConsole: boolean;
 

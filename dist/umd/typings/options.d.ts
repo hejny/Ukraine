@@ -27,6 +27,8 @@ export interface IUkraineOptions {
     ribbon: null | 'TOP_LEFT' | 'TOP_RIGHT' | 'BOTTOM_LEFT' | 'BOTTOM_RIGHT';
     /**
      * If true, information will be shown also in dev console
+     * TODO: !!! Implement
+     * TODO: !!! To samples + README
      */
     isInConsole: boolean;
     /**

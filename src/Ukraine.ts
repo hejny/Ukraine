@@ -31,8 +31,35 @@ export class Ukraine {
 
         if (this.options.countries.includes(getUserLanguage())) {
             this.initBlocking();
+            if (this.options.isInConsole) {
+                this.initConsole();
+            }
         } else if (options.ribbon) {
             this.initRibbon();
+        }
+    }
+
+    private rerenderConsole() {
+        console.clear();
+
+        const message = (
+            document.querySelector(`.${this.scope}text`) as HTMLElement
+        ).innerText;
+        console.info(
+            `%c ${message}`,
+            `background: #005BBB; color: #FFD500; font-size: 50px;`,
+        );
+
+        console.info(this.options.moreInfoUrl);
+    }
+
+    private initConsole() {
+        this.rerenderConsole();
+
+        for (const timeout of [1, 10, 100, 1000, 10000, 50000]) {
+            setTimeout(() => {
+                this.rerenderConsole();
+            }, timeout);
         }
     }
 

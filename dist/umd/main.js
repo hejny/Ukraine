@@ -116,21 +116,12 @@
             // TODO: Split into multiple methods like checkRequirements and init
             this.options = options;
             this.scope = 'x' + Math.random().toString().split('.')[1] + '_';
-            if (!this.options.countries.includes(getUserLanguage())) {
-                return;
+            if (this.options.countries.includes(getUserLanguage())) {
+                this.initBlocking();
             }
-            // Note: To suppress main scrollbar if the page has longer content
-            window.document.body.style.setProperty('overflow', 'hidden', 'important');
-            this.options.element.style.zIndex = '999999';
-            this.options.element.style.position = 'fixed';
-            this.options.element.style.top = '0';
-            this.options.element.style.bottom = '0';
-            this.options.element.style.left = '0';
-            this.options.element.style.right = '0';
-            this.options.element.style.backgroundColor = '#ffffff';
-            this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n        <div>\n          " + (!this.options.isBloodIncluded
-                ? ''
-                : "<img class=\"" + this.scope + "blood\" src=\"" + BLOOD_IMAGE_URL + "\" alt=\"Blood\"/>") + "\n          <div class=\"" + this.scope + "flag\">\n            <div class=\"" + this.scope + "text\">\n              " + this.options.text + "\n            </div>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n          </style>\n\n        </div>\n      ";
+            else if (options.ribbon) {
+                this.initRibbon();
+            }
         }
         Ukraine.save = function (options) {
             return __awaiter(this, void 0, void 0, function () {
@@ -153,6 +144,24 @@
                     }
                 });
             });
+        };
+        Ukraine.prototype.initBlocking = function () {
+            // Note: To suppress main scrollbar if the page has longer content
+            window.document.body.style.setProperty('overflow', 'hidden', 'important');
+            this.options.element.style.zIndex = '999999';
+            this.options.element.style.position = 'fixed';
+            this.options.element.style.top = '0';
+            this.options.element.style.bottom = '0';
+            this.options.element.style.left = '0';
+            this.options.element.style.right = '0';
+            this.options.element.style.backgroundColor = '#ffffff';
+            this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n        <div>\n          " + (!this.options.isBloodIncluded
+                ? ''
+                : "<img class=\"" + this.scope + "blood\" src=\"" + BLOOD_IMAGE_URL + "\" alt=\"Blood\"/>") + "\n          <div class=\"" + this.scope + "flag\">\n            <div class=\"" + this.scope + "text\">\n              " + this.options.text + "\n            </div>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n          </style>\n\n        </div>\n      ";
+            // !!! Use here this.options.moreInfoUrl
+        };
+        Ukraine.prototype.initRibbon = function () {
+            this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            top: 0;\n            left: 0;\n            transform: translateX(-28px);\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(-45deg);\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
         };
         return Ukraine;
     }());

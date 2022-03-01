@@ -29,10 +29,14 @@ export class Ukraine {
     public constructor(public readonly options: IUkraineOptions) {
         // TODO: Split into multiple methods like checkRequirements and init
 
-        if (!this.options.countries.includes(getUserLanguage())) {
-            return;
+        if (this.options.countries.includes(getUserLanguage())) {
+            this.initBlocking();
+        } else if (options.ribbon) {
+            this.initRibbon();
         }
+    }
 
+    private initBlocking() {
         // Note: To suppress main scrollbar if the page has longer content
         window.document.body.style.setProperty(
             'overflow',
@@ -96,5 +100,38 @@ export class Ukraine {
 
         </div>
       `;
+        // !!! Use here this.options.moreInfoUrl
+    }
+
+    private initRibbon() {
+        this.options.element.innerHTML = /* TODO: Use spaceTrim */ `
+
+        <div class="${this.scope}container">
+          <a class="${this.scope}ribbon" href="${this.options.moreInfoUrl}"></a>
+        </div>
+
+        <style>
+
+          .${this.scope}container {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translateX(-28px);
+          }
+
+          .${this.scope}ribbon {
+            display: block;
+            width: 10vw;
+            height: 0px;
+            transform: rotate(-45deg);
+            border-top: 20px solid #0057b7;
+            border-bottom: 20px solid #ffd700;
+          }
+
+        </style>
+
+
+    `;
     }
 }

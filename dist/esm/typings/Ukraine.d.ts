@@ -4,4 +4,6 @@ export declare class Ukraine {
     static save(options?: Partial<IUkraineOptions>): Promise<Ukraine>;
     private readonly scope;
     constructor(options: IUkraineOptions);
+    private initBlocking;
+    private initRibbon;
 }

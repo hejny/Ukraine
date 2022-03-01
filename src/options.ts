@@ -19,7 +19,6 @@ export interface IUkraineOptions {
     /**
      * Link to more information about this war
      * Note: Using type string (not URL class) to keep maximal compatibility
-     * TODO: !!! Implement
      * TODO: !!! To samples + README
      */
     moreInfoUrl: string;
@@ -32,7 +31,6 @@ export interface IUkraineOptions {
 
     /**
      * If true, information will be shown also in dev console
-     * TODO: !!! Implement
      * TODO: !!! To samples + README
      */
     isInConsole: boolean;

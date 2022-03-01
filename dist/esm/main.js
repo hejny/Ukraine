@@ -98,7 +98,7 @@ var defaultOptions = {
      * TODO: !!! Better URL
      */
     moreInfoUrl: "https://github.com/hejny/Ukraine",
-    ribbon: 'BOTTOM_RIGHT',
+    ribbon: 'TOP_LEFT',
     isInConsole: true,
     isBloodIncluded: true,
     isGraphicIncluded: true,
@@ -155,7 +155,25 @@ var Ukraine = /** @class */ (function () {
         // !!! Use here this.options.moreInfoUrl
     };
     Ukraine.prototype.initRibbon = function () {
-        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            top: 0;\n            left: 0;\n            transform: translateX(-28px);\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(-45deg);\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
+        var _a = {
+            TOP_LEFT: {
+                container: 'top: 0; left: 0;transform: translateX(-32px);',
+                rotate: '-45deg',
+            },
+            TOP_RIGHT: {
+                container: 'top: 0; right: 0;transform: translateX(32px);',
+                rotate: '45deg',
+            },
+            BOTTOM_LEFT: {
+                container: 'bottom: 0; left: 0;transform: translateX(-32px);',
+                rotate: '45deg',
+            },
+            BOTTOM_RIGHT: {
+                container: 'bottom: 0; right: 0;transform: translateX(32px);',
+                rotate: '-45deg',
+            },
+        }[this.options.ribbon], container = _a.container, rotate = _a.rotate;
+        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(" + rotate + ");\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
     };
     return Ukraine;
 }());

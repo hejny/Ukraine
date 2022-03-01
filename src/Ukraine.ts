@@ -104,6 +104,25 @@ export class Ukraine {
     }
 
     private initRibbon() {
+        const { container, rotate } = {
+            TOP_LEFT: {
+                container: 'top: 0; left: 0;transform: translateX(-32px);',
+                rotate: '-45deg',
+            },
+            TOP_RIGHT: {
+                container: 'top: 0; right: 0;transform: translateX(32px);',
+                rotate: '45deg',
+            },
+            BOTTOM_LEFT: {
+                container: 'bottom: 0; left: 0;transform: translateX(-32px);',
+                rotate: '45deg',
+            },
+            BOTTOM_RIGHT: {
+                container: 'bottom: 0; right: 0;transform: translateX(32px);',
+                rotate: '-45deg',
+            },
+        }[this.options.ribbon!];
+
         this.options.element.innerHTML = /* TODO: Use spaceTrim */ `
 
         <div class="${this.scope}container">
@@ -115,16 +134,15 @@ export class Ukraine {
           .${this.scope}container {
 
             position: fixed;
-            top: 0;
-            left: 0;
-            transform: translateX(-28px);
+            ${container}
+
           }
 
           .${this.scope}ribbon {
             display: block;
             width: 10vw;
             height: 0px;
-            transform: rotate(-45deg);
+            transform: rotate(${rotate});
             border-top: 20px solid #0057b7;
             border-bottom: 20px solid #ffd700;
           }

@@ -26,6 +26,7 @@ export interface IUkraineOptions {
 
     /**
      * If set, ribbon with Ukraine flag leading to `moreInfoUrl` will be shown in corner of the page for all users
+     * TODO: !!! To samples + README
      */
     ribbon: null | 'TOP_LEFT' | 'TOP_RIGHT' | 'BOTTOM_LEFT' | 'BOTTOM_RIGHT';
 
@@ -67,7 +68,7 @@ export const defaultOptions: Omit<IUkraineOptions, 'element'> = {
      * TODO: !!! Better URL
      */
     moreInfoUrl: `https://github.com/hejny/Ukraine`,
-    ribbon: 'BOTTOM_RIGHT',
+    ribbon: 'TOP_LEFT',
     isInConsole: true,
     isBloodIncluded: true,
     isGraphicIncluded: true,

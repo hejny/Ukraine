@@ -19,8 +19,8 @@ export interface IUkraineOptions {
     /**
      * Link to more information about this war
      * Note: Using type string (not URL class) to keep maximal compatibility
-     * TODO: Implement
-     * TODO: To samples + README
+     * TODO: !!! Implement
+     * TODO: !!! To samples + README
      */
     moreInfoUrl: string;
 
@@ -41,16 +41,16 @@ export interface IUkraineOptions {
 
     /**
      * If true, images from war will be shown.
-     * TODO: Implement
-     * TODO: To samples + README
+     * TODO: !!! Implement
+     * TODO: !!! To samples + README
      */
     isGraphicIncluded: boolean;
 
     /**
      * If true, there will be option to proceed to website
      * This will change HARD ban to SOFT ban
-     * TODO: Implement
-     * TODO: To samples + README
+     * TODO: !!! Implement
+     * TODO: !!! To samples + README
      */
     isCancelable: boolean;
 }
@@ -64,7 +64,7 @@ export const defaultOptions: Omit<IUkraineOptions, 'element'> = {
     text: `Остановить войну с <b>Украиной</b>`,
 
     /**
-     * TODO: Better URL
+     * TODO: !!! Better URL
      */
     moreInfoUrl: `https://github.com/hejny/Ukraine`,
     ribbon: 'BOTTOM_RIGHT',

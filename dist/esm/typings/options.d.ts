@@ -16,17 +16,14 @@ export interface IUkraineOptions {
     /**
      * Link to more information about this war
      * Note: Using type string (not URL class) to keep maximal compatibility
-     * TODO: !!! To samples + README
      */
     moreInfoUrl: string;
     /**
      * If set, ribbon with Ukraine flag leading to `moreInfoUrl` will be shown in corner of the page for all users
-     * TODO: !!! To samples + README
      */
     ribbon: null | 'TOP_LEFT' | 'TOP_RIGHT' | 'BOTTOM_LEFT' | 'BOTTOM_RIGHT';
     /**
      * If true, information will be shown also in dev console
-     * TODO: !!! To samples + README
      */
     isInConsole: boolean;
     /**
@@ -35,14 +32,12 @@ export interface IUkraineOptions {
     isBloodIncluded: boolean;
     /**
      * If true, images from war will be shown.
-     * TODO: !!! Implement
-     * TODO: !!! To samples + README
+     * If string, image with given URL will be shown
      */
-    isGraphicIncluded: boolean;
+    isGraphicIncluded: boolean | string;
     /**
      * If true, there will be option to proceed to website
      * This will change HARD ban to SOFT ban
-     * TODO: !!! To samples + README
      */
     isCancelable: boolean;
 }

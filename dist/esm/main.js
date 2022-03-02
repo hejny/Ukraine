@@ -107,7 +107,7 @@ var defaultOptions = {
     countries: [/* Russia and Belarus */ 'ru', 'by'],
     text: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0432\u043E\u0439\u043D\u0443 \u0441 <b>\u0423\u043A\u0440\u0430\u0438\u043D\u043E\u0439</b>",
     /**
-     * TODO: !!! Better URL
+     * TODO: Probbably better default URL
      */
     moreInfoUrl: "https://github.com/hejny/Ukraine",
     ribbon: 'TOP_LEFT',
@@ -116,6 +116,18 @@ var defaultOptions = {
     isGraphicIncluded: true,
     isCancelable: true,
 };
+
+/**
+ *
+ * @collboard-modules-sdk
+ */
+function randomItem() {
+    var items = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        items[_i] = arguments[_i];
+    }
+    return items[Math.floor(Math.random() * items.length)];
+}
 
 var Ukraine = /** @class */ (function () {
     function Ukraine(options) {
@@ -202,7 +214,7 @@ var Ukraine = /** @class */ (function () {
             ? ''
             : "<button class=\"" + this.scope + "cancel\">\u2716</button>") + "\n\n          <div class=\"" + this.scope + "flag\">\n\n            " + (!this.options.isGraphicIncluded
             ? ''
-            : "<div class=\"" + this.scope + "graphic\"><div class=\"inner\"></div></div>") + "\n\n            <a class=\"" + this.scope + "text\" href=\"" + this.options.moreInfoUrl + "\">\n              " + this.options.text + "\n            </a>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              z-index: 9999999;\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n            button." + this.scope + "cancel{\n              display: block;\n              position: fixed;\n              top: 0;\n              right: 0;\n              cursor: pointer;\n              font-size: 35px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: none;\n              outline: none;\n            }\n\n            button." + this.scope + "cancel:hover{\n              color: #ffffff;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "graphic {\n              position: absolute;\n              opacity: 0.5;\n              pointer-events: none;\n            }\n            ." + this.scope + "graphic .inner {\n              position: relative;\n              background-image: url(\"https://raw.githubusercontent.com/hejny/Ukraine/main/assets/war/war1.jpg\");\n              background-size: cover;\n              opacity: 0.5;\n              pointer-events: none;\n              width:100vw;\n              height:100vh;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n\n\n          </style>\n\n        </div>\n      ";
+            : "<div class=\"" + this.scope + "graphic\"><div class=\"inner\"></div></div>") + "\n\n            <a class=\"" + this.scope + "text\" href=\"" + this.options.moreInfoUrl + "\">\n              " + this.options.text + "\n            </a>\n          </div>\n\n          <style>\n            img." + this.scope + "blood{\n              z-index: 9999999;\n              position: fixed;\n              pointer-events: none;\n              left: 10vw;\n              top: 10vh;\n              max-width: 30vw;\n            }\n\n            button." + this.scope + "cancel{\n              display: block;\n              position: fixed;\n              top: 0;\n              right: 0;\n              cursor: pointer;\n              font-size: 35px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: none;\n              outline: none;\n            }\n\n            button." + this.scope + "cancel:hover{\n              color: #ffffff;\n            }\n\n\n            ." + this.scope + "flag {\n              background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n              background-size: cover;\n              width:100vw;\n              height:100vh;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n            }\n\n            ." + this.scope + "graphic {\n              position: absolute;\n              opacity: 0.5;\n              pointer-events: none;\n            }\n            ." + this.scope + "graphic .inner {\n              position: relative;\n              background-image: url(\"" + this.getGraphicUrl() + "\");\n              background-size: cover;\n              opacity: 0.5;\n              pointer-events: none;\n              width:100vw;\n              height:100vh;\n            }\n\n            ." + this.scope + "text {\n              padding: 10px;\n              font-size: 50px;\n              color: #FFD500;\n              background-color: #005BBB;\n              border: 3px double #FFD500;\n            }\n\n            ." + this.scope + "text b{\n              display: block;\n              font-size: 100px;\n            }\n\n\n          </style>\n\n        </div>\n      ";
         if (this.options.isCancelable) {
             this.options.element
                 .querySelector("." + this.scope + "cancel")
@@ -233,6 +245,14 @@ var Ukraine = /** @class */ (function () {
             },
         }[this.options.ribbon], container = _a.container, rotate = _a.rotate;
         this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(" + rotate + ");\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
+    };
+    Ukraine.prototype.getGraphicUrl = function () {
+        if (typeof this.options.isGraphicIncluded === 'string') {
+            return this.options.isGraphicIncluded;
+        }
+        else {
+            return randomItem("https://raw.githubusercontent.com/hejny/Ukraine/main/assets/graphic/war1.jpg");
+        }
     };
     return Ukraine;
 }());

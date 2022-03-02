@@ -8,4 +8,5 @@ export declare class Ukraine {
     private initConsole;
     private initBlocking;
     private initRibbon;
+    private getGraphicUrl;
 }

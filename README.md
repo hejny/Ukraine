@@ -20,7 +20,7 @@ I don't want to punish the Russian people as a whole. As a citizen of Prague, I 
 
 I have created a simple way how to do it.
 
-For the users **from other places, nothing happens**. The script is tiny to load and insignificant. If the visitor is from **Russia or Belarus** _(detected by system language)_ this **message will appear**:
+For the users **from other places, nothing happens or 🟦 you can optionally place the ribbon with Ukraine flag 🟨**. The script is tiny to load and insignificant. If the visitor is from **Russia or Belarus** _(detected by system language)_ this **message will appear**:
 
 https://github.com/hejny/Ukraine
 
@@ -48,7 +48,7 @@ There are several ways how to add this to your page:
 <!-- TODO: Auto update of version v0.13.0 -->
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.13.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>
@@ -75,41 +75,82 @@ Ukraine.save();
 
 _Note: This library is written in TypeScript so [options](./src/options.ts) are fully typed._
 
-<!--
-### 📗 Wordpress, ...
-Feel free to add more methods of importing
--->
+### ⚛️ React
 
-## 🛑 How not to use?
+First, you need to install [save-ukraine package from NPM](https://www.npmjs.com/package/save-ukraine):
 
-There are some ways to beware of
+```bash
+npm i save-ukraine
+```
 
-### 👨🏽‍💻 Security
+And then use:
 
-When you import anything _(not only this script)_ on your page, please do not trust the publisher. Verify the code and **include only the specific version** not the wildcard of every future version.
+```typescript
+import Ukraine from 'save-ukraine';
+      <>
+        <div
+            ref={(element) => {
+                if (element) {
+                    Ukraine.save({ element });
+                }
+            }}
+        />
+        {/*...Here will be rest of your app...*/}
+      </>,
+    document.getElementById('root'),
+);
+```
 
-<!--
+📗 Wordpress
 
-TODO:
+Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
 
-### 👽 Import via
-
-Do not use - caniuse for Russia
-<script type="module">
-    import Ukraine from '../dist/esm/Ukraine.js';
-
-    console.log(
-        Ukraine.default(`
-
-          ✂️ Ukraine as ES module ✂️
-
-    `),
-    );
+```html
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
+<script>
+    Ukraine.save();
 </script>
+```
 
+<!--
+TODO: Maybe make custom WordPress plugin:
+      @see https://developer.wordpress.org/plugins/wordpress-org/
 -->
 
-## 🛠 Customization
+<!--
+Note: Feel free to add more methods of importing
+-->
+
+## 🎗️ I just want to add ribbon
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
+<script>
+    Ukraine.save({
+        countries: [
+            /* Make this list empty */
+        ],
+        ribbon: 'TOP_LEFT',
+    });
+</script>
+```
+
+_Or use other method of installation see above._
+
+## ❎ I want that users can cancel the message
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
+<script>
+    Ukraine.save({
+        isCancelable: true,
+    });
+</script>
+```
+
+_Or use other method of installation see above._
+
+## 🛠 Other customization
 
 You can customize what will be shown.
 Here are all the [options](./src/options.ts). If you have some idea feel free to contribute via pull request.
@@ -118,23 +159,20 @@ Here are all the [options](./src/options.ts). If you have some idea feel free to
 Ukraine.save({
     text: 'Stop the war with <b>Ukraine</b>',
     countries: [/* Russia and Belarus */ 'ru', 'by'],
+    moreInfoUrl: `https://github.com/hejny/Ukraine`,
+    ribbon: 'TOP_LEFT',
+    isInConsole: true,
     isBloodIncluded: true,
+    isGraphicIncluded: true,
+    isCancelable: true,
 });
 ```
 
-## 🎭 Scenarios
+## 👨🏽‍💻 Security
 
-!!!
-### I just want to add
+When you import anything _(not only this script)_ on your page, please do not trust the publisher. Verify the code and **include only the specific version** not the wildcard of every future version.
 
-### I want to block
-
-### I want to block
-
-
-
-## ⁉️ Questions & FAQ
-
+## ⁉️ FAQ
 
 Few most common things aggregated from your questions:
 
@@ -144,13 +182,11 @@ Few most common things aggregated from your questions:
 
 We are capturing `navigator.language` from the browser. [Full implementation is here](https://github.com/hejny/Ukraine/blob/main/src/getUserLanguage.ts).
 
-
 ---
 
 > How do you block the page?
 
 I am putting a fixed full-screen div with a big z-index + restricting overflow and pointer-events for the rest of the page.
-
 
 ---
 
@@ -182,4 +218,3 @@ Not to punish Russian people but to increase the efficiency of economic sanction
 > Can I change this and that?
 
 **Definitely!** Please make a [pull request](https://github.com/hejny/Ukraine/pulls).
-

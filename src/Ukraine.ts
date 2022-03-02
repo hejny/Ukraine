@@ -1,6 +1,7 @@
 import { BLOOD_IMAGE_URL, UKRAINE_FLAG_IMAGE_URL } from './assets';
 import { getUserLanguage } from './getUserLanguage';
 import { defaultOptions, IUkraineOptions } from './options';
+import { randomItem } from './randomItem';
 
 export class Ukraine {
     public static async save(options?: Partial<IUkraineOptions>) {
@@ -156,7 +157,7 @@ export class Ukraine {
             }
             .${this.scope}graphic .inner {
               position: relative;
-              background-image: url("https://raw.githubusercontent.com/hejny/Ukraine/main/assets/war/war1.jpg");
+              background-image: url("${this.getGraphicUrl()}");
               background-size: cover;
               opacity: 0.5;
               pointer-events: none;
@@ -242,5 +243,16 @@ export class Ukraine {
 
 
     `;
+    }
+
+    private getGraphicUrl(): string {
+        if (typeof this.options.isGraphicIncluded === 'string') {
+            return this.options.isGraphicIncluded;
+        } else {
+            return randomItem(
+                `https://raw.githubusercontent.com/hejny/Ukraine/main/assets/graphic/war1.jpg`,
+                // TODO: More images @see https://facebook.com/story.php?story_fbid=10221678909548124&id=1416254989&m_entstream_source=timeline
+            );
+        }
     }
 }

@@ -7,6 +7,7 @@ export declare class Ukraine {
     private rerenderConsole;
     private initConsole;
     private initBlocking;
+    private static RIBBON_CSSS;
     private initRibbon;
     private getGraphicUrl;
 }

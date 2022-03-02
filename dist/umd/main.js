@@ -120,7 +120,7 @@
         isInConsole: true,
         isBloodIncluded: true,
         isGraphicIncluded: true,
-        isCancelable: true,
+        isCancelable: false,
     };
 
     /**
@@ -140,13 +140,14 @@
             // TODO: Split into multiple methods like checkRequirements and init
             this.options = options;
             this.scope = 'x' + Math.random().toString().split('.')[1] + '_';
+            var isBlocking;
             if (this.options.countries.includes(getUserLanguage())) {
-                this.initBlocking();
-                if (this.options.isInConsole) {
-                    this.initConsole();
-                }
+                isBlocking = this.initBlocking();
             }
-            else if (options.ribbon) {
+            else {
+                isBlocking = false;
+            }
+            if (options.ribbon && !isBlocking) {
                 this.initRibbon();
             }
         }
@@ -173,10 +174,13 @@
             });
         };
         Ukraine.prototype.rerenderConsole = function () {
-            console.clear();
-            var message = document.querySelector("." + this.scope + "text").innerText;
-            console.info("%c " + message, "background: #005BBB; color: #FFD500; font-size: 50px;");
-            console.info(this.options.moreInfoUrl);
+            try {
+                var message = document.querySelector("." + this.scope + "text").innerText;
+                console.clear();
+                console.info("%c " + message, "background: #005BBB; color: #FFD500; font-size: 50px;");
+                console.info(this.options.moreInfoUrl);
+            }
+            catch (e) { }
         };
         Ukraine.prototype.initConsole = function () {
             var e_1, _a;
@@ -202,7 +206,7 @@
             var _this = this;
             if (this.options.isCancelable) {
                 if (localStorage.getItem('Ukraine-read')) {
-                    return;
+                    return false;
                 }
             }
             // Note: To suppress main scrollbar if the page has longer content
@@ -230,26 +234,17 @@
                     location.reload();
                 });
             }
+            if (this.options.isInConsole) {
+                this.initConsole();
+            }
+            return true;
         };
         Ukraine.prototype.initRibbon = function () {
-            var _a = {
-                TOP_LEFT: {
-                    container: 'top: 0; left: 0;transform: translateX(-32px);',
-                    rotate: '-45deg',
-                },
-                TOP_RIGHT: {
-                    container: 'top: 0; right: 0;transform: translateX(32px);',
-                    rotate: '45deg',
-                },
-                BOTTOM_LEFT: {
-                    container: 'bottom: 0; left: 0;transform: translateX(-32px);',
-                    rotate: '45deg',
-                },
-                BOTTOM_RIGHT: {
-                    container: 'bottom: 0; right: 0;transform: translateX(32px);',
-                    rotate: '-45deg',
-                },
-            }[this.options.ribbon], container = _a.container, rotate = _a.rotate;
+            var ribbonCss = Ukraine.RIBBON_CSSS[this.options.ribbon];
+            if (!ribbonCss) {
+                ribbonCss = Ukraine.RIBBON_CSSS[defaultOptions.ribbon];
+            }
+            var container = ribbonCss.container, rotate = ribbonCss.rotate;
             this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(" + rotate + ");\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
         };
         Ukraine.prototype.getGraphicUrl = function () {
@@ -259,6 +254,24 @@
             else {
                 return randomItem("https://raw.githubusercontent.com/hejny/Ukraine/main/assets/graphic/war1.jpg");
             }
+        };
+        Ukraine.RIBBON_CSSS = {
+            TOP_LEFT: {
+                container: 'top: 0; left: 0;transform: translateX(-32px);',
+                rotate: '-45deg',
+            },
+            TOP_RIGHT: {
+                container: 'top: 0; right: 0;transform: translateX(32px);',
+                rotate: '45deg',
+            },
+            BOTTOM_LEFT: {
+                container: 'bottom: 0; left: 0;transform: translateX(-32px);',
+                rotate: '45deg',
+            },
+            BOTTOM_RIGHT: {
+                container: 'bottom: 0; right: 0;transform: translateX(32px);',
+                rotate: '-45deg',
+            },
         };
         return Ukraine;
     }());

@@ -30,28 +30,32 @@ export class Ukraine {
     public constructor(public readonly options: IUkraineOptions) {
         // TODO: Split into multiple methods like checkRequirements and init
 
+        let isBlocking: boolean;
         if (this.options.countries.includes(getUserLanguage())) {
-            this.initBlocking();
-            if (this.options.isInConsole) {
-                this.initConsole();
-            }
-        } else if (options.ribbon) {
+            isBlocking = this.initBlocking();
+        } else {
+            isBlocking = false;
+        }
+
+        if (options.ribbon && !isBlocking) {
             this.initRibbon();
         }
     }
 
     private rerenderConsole() {
-        console.clear();
+        try {
+            const message = (
+                document.querySelector(`.${this.scope}text`) as HTMLElement
+            ).innerText;
 
-        const message = (
-            document.querySelector(`.${this.scope}text`) as HTMLElement
-        ).innerText;
-        console.info(
-            `%c ${message}`,
-            `background: #005BBB; color: #FFD500; font-size: 50px;`,
-        );
+            console.clear();
+            console.info(
+                `%c ${message}`,
+                `background: #005BBB; color: #FFD500; font-size: 50px;`,
+            );
 
-        console.info(this.options.moreInfoUrl);
+            console.info(this.options.moreInfoUrl);
+        } catch (e) {}
     }
 
     private initConsole() {
@@ -64,10 +68,10 @@ export class Ukraine {
         }
     }
 
-    private initBlocking() {
+    private initBlocking(): boolean {
         if (this.options.isCancelable) {
             if (localStorage.getItem('Ukraine-read')) {
-                return;
+                return false;
             }
         }
 
@@ -193,27 +197,41 @@ export class Ukraine {
                     location.reload();
                 });
         }
+
+        if (this.options.isInConsole) {
+            this.initConsole();
+        }
+
+        return true;
     }
 
+    private static RIBBON_CSSS = {
+        TOP_LEFT: {
+            container: 'top: 0; left: 0;transform: translateX(-32px);',
+            rotate: '-45deg',
+        },
+        TOP_RIGHT: {
+            container: 'top: 0; right: 0;transform: translateX(32px);',
+            rotate: '45deg',
+        },
+        BOTTOM_LEFT: {
+            container: 'bottom: 0; left: 0;transform: translateX(-32px);',
+            rotate: '45deg',
+        },
+        BOTTOM_RIGHT: {
+            container: 'bottom: 0; right: 0;transform: translateX(32px);',
+            rotate: '-45deg',
+        },
+    };
+
     private initRibbon() {
-        const { container, rotate } = {
-            TOP_LEFT: {
-                container: 'top: 0; left: 0;transform: translateX(-32px);',
-                rotate: '-45deg',
-            },
-            TOP_RIGHT: {
-                container: 'top: 0; right: 0;transform: translateX(32px);',
-                rotate: '45deg',
-            },
-            BOTTOM_LEFT: {
-                container: 'bottom: 0; left: 0;transform: translateX(-32px);',
-                rotate: '45deg',
-            },
-            BOTTOM_RIGHT: {
-                container: 'bottom: 0; right: 0;transform: translateX(32px);',
-                rotate: '-45deg',
-            },
-        }[this.options.ribbon!];
+        let ribbonCss = Ukraine.RIBBON_CSSS[this.options.ribbon!];
+
+        if (!ribbonCss) {
+            ribbonCss = Ukraine.RIBBON_CSSS[defaultOptions.ribbon!];
+        }
+
+        const { container, rotate } = ribbonCss;
 
         this.options.element.innerHTML = /* TODO: Use spaceTrim */ `
 

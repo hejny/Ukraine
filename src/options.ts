@@ -66,5 +66,5 @@ export const defaultOptions: Omit<IUkraineOptions, 'element'> = {
     isInConsole: true,
     isBloodIncluded: true,
     isGraphicIncluded: true,
-    isCancelable: true,
+    isCancelable: false,
 };

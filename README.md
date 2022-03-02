@@ -121,7 +121,9 @@ TODO: Maybe make custom WordPress plugin:
 Note: Feel free to add more methods of importing
 -->
 
-## 🎗️ I just want to add ribbon
+## 🧩 Scenarios to use
+
+### 🎗️ I just want to add ribbon
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
@@ -137,7 +139,7 @@ Note: Feel free to add more methods of importing
 
 _Or use other method of installation see above._
 
-## ❎ I want that users can cancel the message
+### ❎ I want that users can cancel the message
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
@@ -150,7 +152,21 @@ _Or use other method of installation see above._
 
 _Or use other method of installation see above._
 
-## 🛠 Other customization
+### 🖼️ I do not want to include cruel graphic and blood
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.14.0/dist/umd/main.js"></script>
+<script>
+    Ukraine.save({
+        isBloodIncluded: false,
+        isGraphicIncluded: false,
+    });
+</script>
+```
+
+_Or use other method of installation see above._
+
+### 🛠 Other customization
 
 You can customize what will be shown.
 Here are all the [options](./src/options.ts). If you have some idea feel free to contribute via pull request.

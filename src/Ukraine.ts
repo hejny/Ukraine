@@ -122,7 +122,7 @@ export class Ukraine {
 
           <style>
             img.${this.scope}blood{
-              z-index: 9999999;
+              z-index: 2147483647;
               position: fixed;
               pointer-events: none;
               left: 10vw;
@@ -250,6 +250,8 @@ export class Ukraine {
             position: fixed;
             ${container}
 
+            z-index: 2147483647;
+
           }
 
           .${this.scope}ribbon {
@@ -260,7 +262,7 @@ export class Ukraine {
 
 
             background-image: url("${UKRAINE_FLAG_IMAGE_URL}");
-            background-size: stretch;
+            background-size: auto;
           }
 
         </style>

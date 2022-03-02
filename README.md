@@ -48,7 +48,7 @@ There are several ways how to add this to your page:
 <!-- TODO: Auto update of version v0.13.0 -->
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.17.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>
@@ -62,7 +62,7 @@ _Note: Normally you would include **async** and **defer** keywords in the script
 Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.17.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>
@@ -122,6 +122,8 @@ ReactDOM.render(
 Or you can make full component:
 
 ```typescript
+// SaveUkraine.tsx
+
 import * as React from 'react';
 import Ukraine, { IUkraineOptions } from 'save-ukraine';
 
@@ -161,7 +163,7 @@ Note: Feel free to add more methods of importing
 ### 🎗️ I just want to add ribbon
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.17.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         countries: [
@@ -177,7 +179,7 @@ _Or use other method of installation see above._
 ### ❎ I want that users can cancel the message
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.17.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         isCancelable: true,
@@ -190,7 +192,7 @@ _Or use other method of installation see above._
 ### 🖼️ I do not want to include cruel graphic and blood
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.17.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         isBloodIncluded: false,
@@ -204,7 +206,7 @@ _Or use other method of installation see above._
 ### 🎗️🎗️🎗️🎗️ I want to have ribbon in multiple corners
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.17.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         ribbon: 'TOP_LEFT',

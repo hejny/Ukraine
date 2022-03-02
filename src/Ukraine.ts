@@ -55,7 +55,9 @@ export class Ukraine {
             );
 
             console.info(this.options.moreInfoUrl);
-        } catch (e) {}
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     private initConsole() {

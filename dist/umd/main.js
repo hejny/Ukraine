@@ -180,7 +180,9 @@
                 console.info("%c " + message, "background: #005BBB; color: #FFD500; font-size: 50px;");
                 console.info(this.options.moreInfoUrl);
             }
-            catch (e) { }
+            catch (error) {
+                console.error(error);
+            }
         };
         Ukraine.prototype.initConsole = function () {
             var e_1, _a;

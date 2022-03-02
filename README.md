@@ -57,6 +57,22 @@ There are several ways how to add this to your page:
 _Note:_ You can [also modify the options](https://github.com/hejny/Ukraine/blob/main/samples/browser.html#L10).
 _Note: Normally you would include **async** and **defer** keywords in the script element. But in this situation we do not want to defer this miniscript._
 
+📗 Wordpress
+
+Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
+<script>
+    Ukraine.save();
+</script>
+```
+
+<!--
+TODO: Maybe make custom WordPress plugin:
+      @see https://developer.wordpress.org/plugins/wordpress-org/
+-->
+
 ### 📘 Import into the bundle
 
 First, you need to install [save-ukraine package from NPM](https://www.npmjs.com/package/save-ukraine):
@@ -87,7 +103,9 @@ And then use:
 
 ```typescript
 import Ukraine from 'save-ukraine';
-      <>
+
+ReactDOM.render(
+    <>
         <div
             ref={(element) => {
                 if (element) {
@@ -96,26 +114,43 @@ import Ukraine from 'save-ukraine';
             }}
         />
         {/*...Here will be rest of your app...*/}
-      </>,
+    </>,
     document.getElementById('root'),
 );
 ```
 
-📗 Wordpress
+Or you can make full component:
 
-Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
+```typescript
+import * as React from 'react';
+import Ukraine, { IUkraineOptions } from 'save-ukraine';
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
-<script>
-    Ukraine.save();
-</script>
+export function SaveUkraine(props: Partial<Omit<IUkraineOptions, 'element'>>) {
+    return (
+        <div
+            ref={(element) => {
+                if (element) {
+                    Ukraine.save({ element, ...props });
+                }
+            }}
+        />
+    );
+}
 ```
 
-<!--
-TODO: Maybe make custom WordPress plugin:
-      @see https://developer.wordpress.org/plugins/wordpress-org/
--->
+And use it:
+
+```typescript
+import { SaveUkraine } from './SaveUkraine';
+
+ReactDOM.render(
+    <>
+        <SaveUkraine isCancelable={true} />
+        {/*...Here will be rest of your app...*/}
+    </>,
+    document.getElementById('root'),
+);
+```
 
 <!--
 Note: Feel free to add more methods of importing

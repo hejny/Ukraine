@@ -241,7 +241,7 @@ var Ukraine = /** @class */ (function () {
             ribbonCss = Ukraine.RIBBON_CSSS[defaultOptions.ribbon];
         }
         var container = ribbonCss.container, rotate = ribbonCss.rotate;
-        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 10vw;\n            height: 0px;\n            transform: rotate(" + rotate + ");\n            border-top: 20px solid #0057b7;\n            border-bottom: 20px solid #ffd700;\n          }\n\n        </style>\n\n\n    ";
+        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 100vw;\n            height: 3vw;\n            transform: rotate(" + rotate + ");\n\n\n            background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n            background-size: stretch;\n          }\n\n        </style>\n\n\n    ";
     };
     Ukraine.prototype.getGraphicUrl = function () {
         if (typeof this.options.isGraphicIncluded === 'string') {
@@ -253,24 +253,28 @@ var Ukraine = /** @class */ (function () {
     };
     Ukraine.RIBBON_CSSS = {
         TOP_LEFT: {
-            container: 'top: 0; left: 0;transform: translateX(-32px);',
+            container: 'top: 0; left: 0;transform: translateX(-45%);',
             rotate: '-45deg',
         },
         TOP_RIGHT: {
-            container: 'top: 0; right: 0;transform: translateX(32px);',
+            container: 'top: 0; right: 0;transform: translateX(45%);',
             rotate: '45deg',
         },
         BOTTOM_LEFT: {
-            container: 'bottom: 0; left: 0;transform: translateX(-32px);',
+            container: 'bottom: 0; left: 0;transform: translateX(-45%);',
             rotate: '45deg',
         },
         BOTTOM_RIGHT: {
-            container: 'bottom: 0; right: 0;transform: translateX(32px);',
+            container: 'bottom: 0; right: 0;transform: translateX(45%);',
             rotate: '-45deg',
         },
     };
     return Ukraine;
 }());
 
-export { Ukraine as default };
+function save(options) {
+    return Ukraine.save(options);
+}
+
+export { Ukraine as default, defaultOptions, getUserLanguage, save };
 //# sourceMappingURL=main.js.map

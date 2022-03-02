@@ -48,7 +48,7 @@ There are several ways how to add this to your page:
 <!-- TODO: Auto update of version v0.13.0 -->
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>
@@ -62,7 +62,7 @@ _Note: Normally you would include **async** and **defer** keywords in the script
 Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save();
 </script>
@@ -161,7 +161,7 @@ Note: Feel free to add more methods of importing
 ### 🎗️ I just want to add ribbon
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         countries: [
@@ -177,7 +177,7 @@ _Or use other method of installation see above._
 ### ❎ I want that users can cancel the message
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         isCancelable: true,
@@ -190,11 +190,37 @@ _Or use other method of installation see above._
 ### 🖼️ I do not want to include cruel graphic and blood
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.15.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
 <script>
     Ukraine.save({
         isBloodIncluded: false,
         isGraphicIncluded: false,
+    });
+</script>
+```
+
+_Or use other method of installation see above._
+
+### 🎗️🎗️🎗️🎗️ I want to have ribbon in multiple corners
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.16.0/dist/umd/main.js"></script>
+<script>
+    Ukraine.save({
+        ribbon: 'TOP_LEFT',
+        countries: [],
+    });
+    Ukraine.save({
+        ribbon: 'TOP_RIGHT',
+        countries: [],
+    });
+    Ukraine.save({
+        ribbon: 'BOTTOM_LEFT',
+        countries: [],
+    });
+    Ukraine.save({
+        ribbon: 'BOTTOM_RIGHT',
+        countries: [],
     });
 </script>
 ```

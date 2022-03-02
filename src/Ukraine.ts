@@ -4,7 +4,9 @@ import { defaultOptions, IUkraineOptions } from './options';
 import { randomItem } from './randomItem';
 
 export class Ukraine {
-    public static async save(options?: Partial<IUkraineOptions>) {
+    public static async save(
+        options?: Partial<IUkraineOptions>,
+    ): Promise<Ukraine> {
         options = options || {};
 
         if (options.element === undefined) {
@@ -209,19 +211,19 @@ export class Ukraine {
 
     private static RIBBON_CSSS = {
         TOP_LEFT: {
-            container: 'top: 0; left: 0;transform: translateX(-32px);',
+            container: 'top: 0; left: 0;transform: translateX(-45%);',
             rotate: '-45deg',
         },
         TOP_RIGHT: {
-            container: 'top: 0; right: 0;transform: translateX(32px);',
+            container: 'top: 0; right: 0;transform: translateX(45%);',
             rotate: '45deg',
         },
         BOTTOM_LEFT: {
-            container: 'bottom: 0; left: 0;transform: translateX(-32px);',
+            container: 'bottom: 0; left: 0;transform: translateX(-45%);',
             rotate: '45deg',
         },
         BOTTOM_RIGHT: {
-            container: 'bottom: 0; right: 0;transform: translateX(32px);',
+            container: 'bottom: 0; right: 0;transform: translateX(45%);',
             rotate: '-45deg',
         },
     };
@@ -252,11 +254,13 @@ export class Ukraine {
 
           .${this.scope}ribbon {
             display: block;
-            width: 10vw;
-            height: 0px;
+            width: 100vw;
+            height: 3vw;
             transform: rotate(${rotate});
-            border-top: 20px solid #0057b7;
-            border-bottom: 20px solid #ffd700;
+
+
+            background-image: url("${UKRAINE_FLAG_IMAGE_URL}");
+            background-size: stretch;
           }
 
         </style>

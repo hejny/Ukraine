@@ -240,7 +240,9 @@ export class Ukraine {
         this.options.element.innerHTML = /* TODO: Use spaceTrim */ `
 
         <div class="${this.scope}container">
-          <a class="${this.scope}ribbon" href="${this.options.moreInfoUrl}" target="_blank" rel="noopener noreferrer"></a>
+          <a class="${this.scope}ribbon" href="${
+            this.options.moreInfoUrl
+        }" target="_blank" rel="noopener noreferrer"></a>
         </div>
 
         <style>
@@ -263,6 +265,13 @@ export class Ukraine {
 
             background-image: url("${UKRAINE_FLAG_IMAGE_URL}");
             background-size: auto;
+
+
+            ${
+                !this.options.hasShadow
+                    ? ''
+                    : `box-shadow: 0 0 8px rgba(0,0,0,0.5);`
+            }
           }
 
         </style>

@@ -28,6 +28,11 @@ export interface IUkraineOptions {
     ribbon: null | 'TOP_LEFT' | 'TOP_RIGHT' | 'BOTTOM_LEFT' | 'BOTTOM_RIGHT';
 
     /**
+     * If true, shadow will be shown on the ribbon and other graphic elements
+     */
+    hasShadow: boolean;
+
+    /**
      * If true, information will be shown also in dev console
      */
     isInConsole: boolean;
@@ -63,6 +68,7 @@ export const defaultOptions: Omit<IUkraineOptions, 'element'> = {
      */
     moreInfoUrl: `https://github.com/hejny/Ukraine`,
     ribbon: 'TOP_LEFT',
+    hasShadow: false,
     isInConsole: true,
     isBloodIncluded: true,
     isGraphicIncluded: true,

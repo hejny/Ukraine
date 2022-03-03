@@ -111,6 +111,7 @@ var defaultOptions = {
      */
     moreInfoUrl: "https://github.com/hejny/Ukraine",
     ribbon: 'TOP_LEFT',
+    hasShadow: false,
     isInConsole: true,
     isBloodIncluded: true,
     isGraphicIncluded: true,
@@ -241,7 +242,9 @@ var Ukraine = /** @class */ (function () {
             ribbonCss = Ukraine.RIBBON_CSSS[defaultOptions.ribbon];
         }
         var container = ribbonCss.container, rotate = ribbonCss.rotate;
-        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n            z-index: 2147483647;\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 100vw;\n            height: 3vw;\n            transform: rotate(" + rotate + ");\n\n\n            background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n            background-size: auto;\n          }\n\n        </style>\n\n\n    ";
+        this.options.element.innerHTML = /* TODO: Use spaceTrim */ "\n\n        <div class=\"" + this.scope + "container\">\n          <a class=\"" + this.scope + "ribbon\" href=\"" + this.options.moreInfoUrl + "\" target=\"_blank\" rel=\"noopener noreferrer\"></a>\n        </div>\n\n        <style>\n\n          ." + this.scope + "container {\n\n            position: fixed;\n            " + container + "\n\n            z-index: 2147483647;\n\n          }\n\n          ." + this.scope + "ribbon {\n            display: block;\n            width: 100vw;\n            height: 3vw;\n            transform: rotate(" + rotate + ");\n\n\n            background-image: url(\"" + UKRAINE_FLAG_IMAGE_URL + "\");\n            background-size: auto;\n\n\n            " + (!this.options.hasShadow
+            ? ''
+            : "box-shadow: 0 0 8px rgba(0,0,0,0.5);") + "\n          }\n\n        </style>\n\n\n    ";
     };
     Ukraine.prototype.getGraphicUrl = function () {
         if (typeof this.options.isGraphicIncluded === 'string') {

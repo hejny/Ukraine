@@ -119,7 +119,7 @@ There are several ways how to add this to your page:
 _Note:_ You can [also modify the options](https://github.com/hejny/Ukraine/blob/main/samples/browser.html#L10).
 _Note: Normally you would include **async** and **defer** keywords in the script element. But in this situation we do not want to defer this miniscript._
 
-📗 Wordpress
+### 📗 Wordpress
 
 Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
 

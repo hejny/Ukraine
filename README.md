@@ -48,6 +48,9 @@ _Or use other method of installation see below._
 </script>
 ```
 
+![image](https://user-images.githubusercontent.com/23721952/157457857-05cc513e-b58c-4417-998b-bec93330d372.png)
+
+
 _Or use other method of installation see below._
 
 ### 🩸 I want to show banner for Russian users but not include cruel graphic and blood
@@ -61,6 +64,9 @@ _Or use other method of installation see below._
     });
 </script>
 ```
+
+![image](https://user-images.githubusercontent.com/23721952/157458121-4718b34c-3efd-41fd-8f58-d06e5c5aed68.png)
+
 
 _Or use other method of installation see below._
 

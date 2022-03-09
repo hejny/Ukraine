@@ -116,7 +116,6 @@ There are several ways how to add this to your page:
 </script>
 ```
 
-_Note:_ You can [also modify the options](https://github.com/hejny/Ukraine/blob/main/samples/browser.html#L10).
 _Note: Normally you would include **async** and **defer** keywords in the script element. But in this situation we do not want to defer this miniscript._
 
 ### 📗 Wordpress

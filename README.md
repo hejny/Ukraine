@@ -1,8 +1,8 @@
 # 🟦 Stop war on Ukraine 🟨
 
-Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+Help Ukraine - add **ribbon with Ukraine flag** into the website you manage, show the **anti-war message to Russian users**, or **block them from your service**.
 
-A lot of companies did it in their way but this library is super easy to do for everyone.
+A lot of companies did this in their custom way but this library is supereasy option to do for everyone.
 
 ### 🎗️ Add ribbon with Ukraine flag on your website
 

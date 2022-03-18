@@ -8,7 +8,7 @@ A lot of companies did this in their custom way but this library is supereasy op
 
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save({
         ribbon: 'TOP_LEFT',
@@ -27,7 +27,7 @@ _Or use other method of installation see below._
 ### ❎ I want to show banner for Russian users
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save({
         isCancelable: true,
@@ -40,7 +40,7 @@ _Or use other method of installation see below._
 ### 🛑 I want to block website for Russian users
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save({
         isCancelable: false,
@@ -56,7 +56,7 @@ _Or use other method of installation see below._
 ### 🩸 I want to show banner for Russian users but not include cruel graphic and blood
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save({
         isBloodIncluded: false,
@@ -73,7 +73,7 @@ _Or use other method of installation see below._
 ### 🎗️🎗️🎗️🎗️ I want to have ribbon in multiple corners
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save({
         ribbon: 'TOP_LEFT',
@@ -110,7 +110,7 @@ There are several ways how to add this to your page:
 <!-- TODO: Auto update of version v0.13.0 -->
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save();
 </script>
@@ -123,7 +123,7 @@ _Note: Normally you would include **async** and **defer** keywords in the script
 Install [Simple Custom CSS and JS](https://cs.wordpress.org/plugins/custom-css-js/) WordPress plugin and add the following code as the `Custom HTML`:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js" integrity="sha384-Xn1RAG80M8PZlBQh3r8fUvHY7c8RtuplSnqXOkdJyCxqRsToRwJ1m2FP7vyJo7u/" crossorigin="anonymous"></script>
 <script>
     Ukraine.save();
 </script>

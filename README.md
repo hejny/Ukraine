@@ -282,6 +282,11 @@ For the users **from other places, nothing happens or 🟦 you can optionally pl
 -->
 <!--/Badges-->
 
+## 📛 Make 3D printed bagge
+
+
+[![276990939_10221763639026308_8401530540848276183_n](https://user-images.githubusercontent.com/23721952/159365141-520da10f-0ff4-4941-84cc-22cdab7d7588.jpg)https://www.thingiverse.com/thing:5326034](https://www.thingiverse.com/thing:5326034)
+
 
 ## ⁉️ FAQ
 

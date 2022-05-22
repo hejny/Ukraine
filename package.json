@@ -1,40 +1,40 @@
 {
-  "name": "save-ukraine",
-  "version": "0.18.1",
-  "description": "Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.",
-  "sideEffects": false,
-  "module": "./dist/esm/main.js",
-  "main": "./dist/umd/main.js",
-  "typings": "./dist/esm/typings/main.d.ts",
-  "scripts": {
-    "test": "jest",
-    "lint": "tslint -p tsconfig.json",
-    "develop": "rollup --watch --config rollup.config.ts",
-    "build": "rm -rf ./dist && rollup --config rollup.config.ts",
-    "preversion": "npm run lint && npm test",
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hejny/Ukraine"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/hejny/Ukraine/issues"
-  },
-  "homepage": "https://github.com/hejny/Ukraine#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@rollup/plugin-typescript": "8.3.0",
-    "@types/jest": "27.0.2",
-    "jest": "27.3.1",
-    "rollup": "2.58.1",
-    "ts-jest": "27.0.7",
-    "tslib": "2.3.1",
-    "tslint": "6.1.3",
-    "tslint-config-prettier": "1.18.0",
-    "typescript": "4.4.4"
-  }
+    "name": "save-ukraine",
+    "version": "0.18.1",
+    "description": "Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.",
+    "sideEffects": false,
+    "module": "./dist/esm/main.js",
+    "main": "./dist/umd/main.js",
+    "typings": "./dist/esm/typings/main.d.ts",
+    "scripts": {
+        "test": "jest",
+        "lint": "tslint -p tsconfig.json",
+        "develop": "rollup --watch --config rollup.config.ts",
+        "build": "rm -rf ./dist && rollup --config rollup.config.ts",
+        "preversion": "npm run lint && npm test",
+        "postversion": "git push && git push --tags"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hejny/Ukraine"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "SEE LICENSE IN LICENSE",
+    "bugs": {
+        "url": "https://github.com/hejny/Ukraine/issues"
+    },
+    "homepage": "https://github.com/hejny/Ukraine#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@rollup/plugin-typescript": "8.3.0",
+        "@types/jest": "27.0.2",
+        "jest": "27.3.1",
+        "rollup": "2.58.1",
+        "ts-jest": "27.0.7",
+        "tslib": "2.3.1",
+        "tslint": "6.1.3",
+        "tslint-config-prettier": "1.18.0",
+        "typescript": "4.4.4"
+    }
 }

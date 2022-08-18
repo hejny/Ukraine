@@ -1,5 +1,34 @@
-Wallpaper in minimalistic style for project that Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
---aspect 2:1 --version 3
---seed 7637643
+# Note: Each part is new input for imagine command
+#       And every first line will be searched during the harvesting phase
 
-Note: All lines bellow (including this) are ignored.
+Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1
+--seed 1621997
+
+Banner for Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1
+--seed 1621997
+
+Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1 --hd
+--seed 1621997
+
+Banner for Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1 --hd
+--seed 1621997
+
+Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1 --quality 2
+--seed 1621997
+
+Banner for Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1 --quality 2
+--seed 1621997
+
+Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1 --hd --quality 2
+--seed 1621997
+
+Banner for Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.
+--aspect 2:1 --hd --quality 2
+--seed 1621997

@@ -200,9 +200,10 @@ export function SaveUkraine(props: Partial<Omit<IUkraineOptions, 'element'>>) {
     return (
         <div
             ref={(element) => {
-                if (element) {
-                    Ukraine.save({ element, ...props });
+                if (!element) {
+                    return;
                 }
+                Ukraine.save({ element, ...props });
             }}
         />
     );

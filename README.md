@@ -176,9 +176,10 @@ ReactDOM.render(
     <>
         <div
             ref={(element) => {
-                if (element) {
-                    Ukraine.save({ element });
+                if (!element) {
+                    return;
                 }
+                Ukraine.save({ element, ...props });
             }}
         />
         {/*...Here will be rest of your app...*/}

@@ -36,5 +36,15 @@
         "tslint": "6.1.3",
         "tslint-config-prettier": "1.18.0",
         "typescript": "4.4.4"
-    }
+    },
+    "funding": [
+        {
+            "type": "individual",
+            "url": "https://buymeacoffee.com/hejny"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/hejny/Ukraine/blob/main/README.md#%EF%B8%8F-contributing"
+        }
+    ]
 }

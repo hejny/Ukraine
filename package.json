@@ -1,6 +1,6 @@
 {
     "name": "save-ukraine",
-    "version": "0.18.56",
+    "version": "0.18.57",
     "description": "Help Ukraine - add ribbon with Ukraine flag into the website you manage, show the anti-war message to Russian users, or block them from your service.",
     "sideEffects": false,
     "module": "./dist/esm/main.js",

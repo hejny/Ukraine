@@ -286,8 +286,8 @@ For the users **from other places, nothing happens or 🟦 you can optionally pl
 [![test](https://github.com/hejny/Ukraine/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/Ukraine/actions/workflows/test.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/hejny/Ukraine/badge.svg)](https://snyk.io/test/github/hejny/Ukraine)
 [![Issues](https://img.shields.io/github/issues/hejny/Ukraine.svg?style=flat)](https://github.com/hejny/Ukraine/issues)
-[![Socket](https://socket.dev/api/badge/npm/package/save-ukraine)](https://socket.dev/npm/package/save-ukraine)
 <!--[![License of Stop war on Ukraine](https://img.shields.io/github/license/hejny/Ukraine.svg?style=flat)](https://github.com/hejny/Ukraine/blob/main/LICENSE)-->
+<!--[![Socket](https://socket.dev/api/badge/npm/package/save-ukraine)](https://socket.dev/npm/package/save-ukraine)-->
 
 <!--/Badges-->
 

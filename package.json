@@ -16,7 +16,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/hejny/Ukraine"
+        "url": "git+https://github.com/hejny/Ukraine.git"
     },
     "keywords": [],
     "author": "",

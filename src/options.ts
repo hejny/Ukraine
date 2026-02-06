@@ -66,7 +66,7 @@ export const defaultOptions: Omit<IUkraineOptions, 'element'> = {
     /**
      * TODO: Probbably better default URL
      */
-    moreInfoUrl: `https://github.com/hejny/Ukraine`,
+    moreInfoUrl: `https://war.ukraine.ua/`,
     ribbon: 'TOP_LEFT',
     hasShadow: false,
     isInConsole: true,
